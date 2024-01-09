@@ -1,0 +1,23 @@
+LEETCODE PROBLEM : Single Number
+
+Approches :
+1) Using Nested Loop , TC-> o(NxN)
+2) Using Sorting , TC-> o(NlogN)
+3)Using XOR TC-> TC-> o(N)
+
+
+
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+	sort(nums.begin(),nums.end());
+    for(int i=0;i<nums.size();i+=2)
+    {
+        if(i==nums.size()-1 || nums[i]!=nums[i+1])
+        {
+            return nums[i];
+        }
+    }
+    return 0;
+    }
+};
